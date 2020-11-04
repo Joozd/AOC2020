@@ -1,7 +1,7 @@
 package day3
 
 import Solution
-import java.io.BufferedReader
+import shared.Coordinate
 
 
 /**

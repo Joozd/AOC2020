@@ -1,5 +1,7 @@
 package day3
 
+import shared.Coordinate
+
 data class Location(var x: Int, var y: Int) {
     fun move(direction: Char){
         when (direction){
