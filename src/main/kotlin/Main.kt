@@ -14,7 +14,7 @@ class Main {
                 "5" -> day5.Day5(getInputLinesForDay(5)).run()
                 "6" -> day6.Day6(getInputLinesForDay(6)).run()
                 "7" -> day7.Day7(getInputLinesForDay(7)).run()
-                //"7" -> day7.Day7().run()
+                "8" -> day8.Day8(getInputLinesForDay(8)).run()
                 else -> println("Invalid input\n")
             }
         }

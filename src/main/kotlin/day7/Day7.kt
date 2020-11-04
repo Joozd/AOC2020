@@ -2,7 +2,7 @@ package day7
 
 import Solution
 
-class Day7(private val input: List<String> = test1): Solution() {
+class Day7(private val input: List<String>): Solution() {
     private var result1: Int = 0
 
     override fun first() {
@@ -28,7 +28,6 @@ class Day7(private val input: List<String> = test1): Solution() {
         val wires = HashMap<String, Int>().apply {
             set("b", result1)
         }
-        println("check: ${wires["b"]}")
 
         val instructions = input.toMutableList()
 
@@ -91,15 +90,5 @@ class Day7(private val input: List<String> = test1): Solution() {
 
 
         private const val BITMASK = 65535
-        private fun Int.to16Bit() = this and BITMASK
-
-        private val test1 = """123 -> x
-456 -> y
-x AND y -> d
-x OR y -> e
-x LSHIFT 2 -> f
-y RSHIFT 2 -> g
-NOT x -> h
-NOT y -> i""".split('\n')
     }
 }
