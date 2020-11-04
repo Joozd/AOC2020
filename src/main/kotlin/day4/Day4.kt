@@ -19,29 +19,30 @@ If your secret key is pqrstuv, the lowest number it combines with to make an MD5
 Your puzzle input is iwrupvqb.
  */
 
-class Day4(input: String): Solution() {
+class Day4(private val input: String): Solution() {
     private tailrec fun recursiveSearch(s: String, counter: Int, amount: Int): Int =
-        if(checkHashForLeadingZeroes("$s$counter", amount)) counter
-        else {
-        if (counter % 100000 == 0) println("currently at $counter")
-        recursiveSearch(s, counter+1, amount)
-    }
+        if (checkHashForLeadingZeroes("$s$counter", amount)) counter
+        else recursiveSearch(s, counter + 1, amount)
 
-    private fun checkHashForLeadingZeroes(s: String, amount: Int): Boolean{
+    private fun checkHashForLeadingZeroes(s: String, amount: Int): Boolean {
         val hash = MessageDigest.getInstance("MD5").digest(s.toByteArray(Charsets.UTF_8))
         return if (amount == 5)
-            hash[0] == hash[1] && hash[0] == 0.toByte() &&  hash[2].toInt().shr(4) == 0
+            hash[0] == hash[1] && hash[0] == 0.toByte() && hash[2].toInt().shr(4) == 0
         else hash[0] == hash[1] && hash[1] == hash[2] && hash[2] == 0.toByte()
     }
 
-    private val five = recursiveSearch(input, 0, 5)
-    private val six = recursiveSearch(input, five, 6)
+    private var five: Int? = null
 
-    override fun first() {
-        println ("5 digits: $five")
-    }
+    override fun first() =
+        recursiveSearch(input, 0, 5).let {
+            five = it
+            println("5 digits: $it")
+        }
 
-    override fun second() {
-        println ("6 digits: $six")
-    }
+    override fun second() =
+        recursiveSearch(input, five ?: 0, 6).let {
+            println("6 digits: $it")
+        }
 }
+
+
