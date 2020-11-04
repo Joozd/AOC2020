@@ -11,11 +11,11 @@ open class Solution {
         timer.start()
         first()
         val firstTime = timer.getElapsedTime()
-        println("\nElapsed time: ${firstTime.toMillis()} millis\n")
+        println("\nElapsed time: ${firstTime.toMillis()} millis.\n")
         println ("question 2:")
         second()
         val elapsedTime = timer.getElapsedTime()
         println("\nElapsed time for 2: ${(elapsedTime - firstTime).toMillis()} millis")
-        println("Total time: ${elapsedTime.toMillis()} millis")
+        println("Total time: ${elapsedTime.toMillis()} millis.\n")
     }
 }
