@@ -4,38 +4,31 @@ import Solution
 import java.io.File
 
 class Day10(private val input: String): Solution() {
-    private val elementLines = File("inputs\\day10a.txt").readLines() // from http://www.se16.info/js/lands2.htm
+    private val elementLines = File("inputs\\day10a.txt").readLines().drop(1) // from http://www.se16.info/js/lands2.htm
+    private val elements = elementLines.map{Element.of(it)}
+    private val elementsMap = elements.map{
+        it.name to it}.toMap()
 
-    fun one(str: String): String{
-        var result = ""
-        var s = str // make mutable
-        while (s.isNotEmpty()){
-            s.charsRepeatingAtStart().let{
-                result += it.toString()
-                result += s.first()
-                s = s.drop(it)
-            }
+    fun getElementsInString(s: String): List<Element>{
+        //check if input is in fact one element:
+        elements.firstOrNull { it.string == s }?.let{
+            return listOf(it)
         }
-        return result
+        TODO("Check which elements make up the string if not one")
     }
 
-    private fun String.charsRepeatingAtStart(): Int{
-        if (isEmpty()) return 0
-        val firstChar = first()
-        var count = 1
-        while(count < length && this[count] == firstChar) count++
-        return count
+    private fun buildList(currentElements: List<Element>, iterationsToGo: Int): List<Element> = when(iterationsToGo){
+        0-> currentElements
+        else -> buildList(currentElements.map{it.evolution.map{n -> elementsMap[n] ?: error("ELEMENT NOT IN MAP - ERROR 1") }}.flatten(), iterationsToGo - 1)
     }
-
-    fun iterateOne(initial: String, cycles: Int): String =
-            when (cycles) {
-                0 -> initial
-                1 -> one(initial)
-                else -> iterateOne(one(initial), cycles-1)
-            }
 
     override fun first() {
-        println("Brute-force: ${iterateOne(input, 40)}") // takes about 2 minutes to run
+        val length = buildList(getElementsInString(input), 40).sumBy { it.size }
+        println("With elements: $length")
+    }
 
+    override fun second() {
+        val length = buildList(getElementsInString(input), 50).sumBy { it.size }
+        println("With elements: $length")
     }
 }
