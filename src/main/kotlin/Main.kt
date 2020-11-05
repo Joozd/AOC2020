@@ -34,6 +34,7 @@ class Main {
                 "9" -> day9.Day9(getInputLinesForDay(9)).run()
                 "10" -> day10.Day10(getInputForDay(10)).run()
                 "11" -> day11.Day11(getInputForDay(11)).run()
+                "12" -> day12.Day12(getInputForDay(12)).run()
                 else -> println("Invalid input\n")
             }
         }
