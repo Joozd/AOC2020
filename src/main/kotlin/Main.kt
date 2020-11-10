@@ -21,6 +21,8 @@ class Main {
                 "11" -> day11.Day11(getInputForDay(11)).run()
                 "12" -> day12.Day12(getInputForDay(12)).run()
                 "13" -> day13.Day13(getInputLinesForDay(13)).run()
+                "14" -> day14.Day14(getInputLinesForDay(14)).run()
+                "15" -> day15.Day15(getInputLinesForDay(15)).run()
 
 
                 "0" -> {
@@ -38,6 +40,8 @@ class Main {
                     day11.Day11(getInputForDay(11)).run()
                     day12.Day12(getInputForDay(12)).run()
                     day13.Day13(getInputLinesForDay(13)).run()
+                    day14.Day14(getInputLinesForDay(14)).run()
+                    day15.Day15(getInputLinesForDay(15)).run()
                     println("\n\nDone, total time: ${t.getElapsedTime().toMillis()} milliseconds.")
                 }
 
