@@ -1,4 +1,5 @@
 import utils.Timer
+import utils.getExtraInputLinesForDay
 import utils.getInputForDay
 import utils.getInputLinesForDay
 
@@ -28,6 +29,7 @@ class Main {
                 "18" -> day18.Day18(getInputLinesForDay(18)).run()
                 "19" -> day19.Day19(getInputLinesForDay(19)).run()
                 "20" -> day20.Day20(getInputForDay(20)).run()
+                "21" -> day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
 
 
                 "0" -> {
@@ -52,6 +54,7 @@ class Main {
                     day18.Day18(getInputLinesForDay(18)).run()
                     day19.Day19(getInputLinesForDay(19)).run()
                     day20.Day20(getInputForDay(20)).run()
+                    day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
                     println("\n\nDone, total time: ${t.getElapsedTime().toMillis()} milliseconds.")
                 }
 
