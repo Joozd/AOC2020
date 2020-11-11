@@ -26,6 +26,7 @@ class Main {
                 "16" -> day16.Day16(getInputLinesForDay(16)).run()
                 "17" -> day17.Day17(getInputLinesForDay(17)).run()
                 "18" -> day18.Day18(getInputLinesForDay(18)).run()
+                "19" -> day19.Day19(getInputLinesForDay(19)).run()
 
 
                 "0" -> {
