@@ -30,6 +30,7 @@ class Main {
                 "19" -> day19.Day19(getInputLinesForDay(19)).run()
                 "20" -> day20.Day20(getInputForDay(20)).run()
                 "21" -> day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
+                "22" -> day22.Day22(getInputLinesForDay(22)).run()
 
 
                 "0" -> {
@@ -55,6 +56,8 @@ class Main {
                     day19.Day19(getInputLinesForDay(19)).run()
                     day20.Day20(getInputForDay(20)).run()
                     day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
+                    day22.Day22(getInputLinesForDay(22)).run()
+
                     println("\n\nDone, total time: ${t.getElapsedTime().toMillis()} milliseconds.")
                 }
 
