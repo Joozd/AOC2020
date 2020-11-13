@@ -35,7 +35,7 @@ class Day23(private val input: List<String>): Solution() {
      * An instruction is a function that takes an optional parameter(can be any value if not used) and the memory to use.
      * Instructions have to take care of setting the POSITION to next instruction.
      */
-    val program: List<(IntArray) -> Unit> by lazy{
+    private val program: List<(IntArray) -> Unit> by lazy{
         input.map{buildInstruction(it)}
     }
 
