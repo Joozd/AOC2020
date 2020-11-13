@@ -6,7 +6,7 @@ class Day23(private val input: List<String>): Solution() {
 
     /**
      * `memory` is the programs memory.
-     * adress:
+     * address:
      * 0: position of current instruction POSITION
      * 1: a
      * 2: b
@@ -39,12 +39,8 @@ class Day23(private val input: List<String>): Solution() {
         input.map{buildInstruction(it)}
     }
 
-    /**
-     * instcurtions:
-     */
 
-
-    fun buildInstruction(s: String): (IntArray) -> Unit =
+    private fun buildInstruction(s: String): (IntArray) -> Unit =
         when {
             s == HLF_A -> {memory -> memory[REG_A] /= 2
                 memory[POSITION]++}
@@ -80,7 +76,7 @@ class Day23(private val input: List<String>): Solution() {
 
 
     companion object{
-        //memory adresses:
+        //memory addresses:
         const val POSITION = 0
         const val REG_A = 1
         const val REG_B = 2
