@@ -31,7 +31,8 @@ class Main {
                 "20" -> day20.Day20(getInputForDay(20)).run()
                 "21" -> day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
                 "22" -> day22.Day22(getInputLinesForDay(22)).run()
-
+                "23" -> day23.Day23(getInputLinesForDay(23)).run()
+                "24" -> day24.Day24(getInputLinesForDay(24)).run()
 
                 "0" -> {
                     val t = Timer().apply{ start() }
@@ -57,6 +58,8 @@ class Main {
                     day20.Day20(getInputForDay(20)).run()
                     day21.Day21(getInputLinesForDay(21), getExtraInputLinesForDay(21, "a")).run()
                     day22.Day22(getInputLinesForDay(22)).run()
+                    day23.Day23(getInputLinesForDay(23)).run()
+                    day24.Day24(getInputLinesForDay(24)).run()
 
                     println("\n\nDone, total time: ${t.getElapsedTime().toMillis()} milliseconds.")
                 }
