@@ -33,6 +33,7 @@ class Main {
                 "22" -> day22.Day22(getInputLinesForDay(22)).run()
                 "23" -> day23.Day23(getInputLinesForDay(23)).run()
                 "24" -> day24.Day24(getInputLinesForDay(24)).run()
+                "25" -> day25.Day25(getInputForDay(25)).run()
 
                 "0" -> {
                     val t = Timer().apply{ start() }
@@ -60,6 +61,7 @@ class Main {
                     day22.Day22(getInputLinesForDay(22)).run()
                     day23.Day23(getInputLinesForDay(23)).run()
                     day24.Day24(getInputLinesForDay(24)).run()
+                    day25.Day25(getInputForDay(25)).run()
 
                     println("\n\nDone, total time: ${t.getElapsedTime().toMillis()} milliseconds.")
                 }
