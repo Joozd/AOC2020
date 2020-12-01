@@ -3,6 +3,7 @@ package utils
 /**
  * Iterates over al pairs in [list]
  * eg. listOf(1,2,3) will become [(1, 2), (1, 3), (2, 3)]
+ * If order matters, just use it.second to it.first for every output.
  */
 class PairMaker<T>(val list: List<T>): Iterable<Pair<T,T>> {
     override fun iterator(): Iterator<Pair<T,T>> = object: Iterator<Pair<T,T>>{
