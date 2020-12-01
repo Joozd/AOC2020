@@ -6,14 +6,9 @@ import utils.PairMaker
 class Day1(day: Int): Solution(day) {
     private val entries = inputLines.map{it.toInt()}
 
-
     override val first: String
         get() = PairMaker(entries).firstOrNull{ it.first + it.second == 2020}?.let{ it.first * it.second}.toString()
     override val second = two()
-
-    // private fun one(): String =
-
-
 
     private fun two(): String{
         val pairs = PairMaker(entries)
