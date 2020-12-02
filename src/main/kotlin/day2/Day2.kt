@@ -3,12 +3,15 @@ package day2
 import Solution
 
 class Day2(day: Int): Solution(day) {
-    // val extraInput = getExtraInputLinesForDay(dayNumber, "a")
+    override val first
+        get() = one().toString()
+    override val second
+        get() = two().toString()
 
-    override val first = one()
-    override val second = two()
+    private var pl: List<Password>? = null
 
-    private fun one() = "Answer to question 1"
+    private fun one() = inputLines.map { Password.of(it)}.also{
+        pl = it}.filter { it.isValidOne }.size
 
-    private fun two() = "Answer to question 2"
+        private fun two() = pl!!.filter { it.isValidTwo }.size
 }

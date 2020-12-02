@@ -29,36 +29,36 @@ class Main {
                 //"22" -> day22.Day22(22).run()
                 //"23" -> day23.Day23(23).run()
 
-                /*
+
                 "0" -> {
                     val totalTime = day1.Day1(1).run() +
                             day2.Day2(2).run()
-                            day3.Day3(3).run() +
-                            day4.Day4(4).run() +
-                            day5.Day5(5).run() +
-                            day6.Day6(6).run() +
-                            day7.Day7(7).run() +
-                            day8.Day8(8).run() +
-                            day9.Day9(9).run() +
-                            day10.Day10(10).run() +
-                            day11.Day11(11).run() +
-                            day12.Day12(12).run() +
-                            day13.Day13(13).run() +
-                            day14.Day14(14).run() +
-                            day15.Day15(15).run() +
-                            day16.Day16(16).run() +
-                            day17.Day17(17).run() +
-                            day18.Day18(18).run() +
-                            day19.Day19(19).run() +
-                            day20.Day20(20).run() +
-                            day21.Day21(21).run() +
-                            day22.Day22(22).run() +
-                            day23.Day23(23).run()
+                            //day3.Day3(3).run()
+                            //day4.Day4(4).run() +
+                            //day5.Day5(5).run() +
+                            //day6.Day6(6).run() +
+                            //day7.Day7(7).run() +
+                            //day8.Day8(8).run() +
+                            //day9.Day9(9).run() +
+                            //day10.Day10(10).run() +
+                            //day11.Day11(11).run() +
+                            //day12.Day12(12).run() +
+                            //day13.Day13(13).run() +
+                            //day14.Day14(14).run() +
+                            //day15.Day15(15).run() +
+                            //day16.Day16(16).run() +
+                            //day17.Day17(17).run() +
+                            //day18.Day18(18).run() +
+                            //day19.Day19(19).run() +
+                            //day20.Day20(20).run() +
+                            //day21.Day21(21).run() +
+                            //day22.Day22(22).run() +
+                            //day23.Day23(23).run()
 
                     println("\n\nDone, total time: ${totalTime.toMillis()}.${totalTime.toNanosPart()} milliseconds.")
                 }
                 
-                 */
+
 
 
                 else -> println("Invalid input\n")
