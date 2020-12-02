@@ -7,6 +7,23 @@ class Day1(day: Int): Solution(day) {
     private val entries = inputLines.map{it.toInt()}.sorted()
 
     override val first: String
+        get() {
+            entries.forEach { first ->
+                (entries.indices.last downTo 0).forEach Inner@{ index ->
+                    if (first + entries[index] < 2020) return@Inner
+                    if (first + entries[index] == 2020) return (first * entries[index]).toString()
+                }
+
+
+            }
+            return "None found"
+        }
+
+    override val second: String
+        get() = "two"
+
+    /*
+    override val first: String
         get() = PairMaker(entries).firstOrNull{ it.first + it.second == 2020}?.let{ it.first * it.second}.toString()
     override val second
         get() = two()
@@ -20,4 +37,6 @@ class Day1(day: Int): Solution(day) {
         }
         return "none found"
     }
+
+     */
 }
