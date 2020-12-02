@@ -4,7 +4,7 @@ import Solution
 import utils.PairMaker
 
 class Day1(day: Int): Solution(day) {
-    private val entries = inputLines.map{it.toInt()}
+    private val entries = inputLines.map{it.toInt()}.sorted()
 
     override val first: String
         get() = PairMaker(entries).firstOrNull{ it.first + it.second == 2020}?.let{ it.first * it.second}.toString()

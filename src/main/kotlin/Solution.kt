@@ -4,8 +4,8 @@ import utils.getInputLinesForDay
 import java.time.Duration
 
 abstract class Solution(day: Int) {
-    protected val inputString: String by lazy { getInputForDay(day) }
-    protected val inputLines: List<String>  by lazy { getInputLinesForDay(day) }
+    // protected val inputString = getInputForDay(day)
+    protected val inputLines = getInputLinesForDay(day)
     /**
      * Number of this day
      */
