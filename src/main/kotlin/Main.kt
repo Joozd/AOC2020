@@ -7,7 +7,7 @@ class Main {
             when (readLine()) {
                 "1" -> day1.Day1(1).run()
                 "2" -> day2.Day2(2).run()
-                //"3" -> day3.Day3(3).run()
+                "3" -> day3.Day3(3).run()
                 //"4" -> day4.Day4(4).run()
                 //"5" -> day5.Day5(5).run()
                 //"6" -> day6.Day6(6).run()
@@ -33,7 +33,7 @@ class Main {
                 "0" -> {
                     val totalTime = day1.Day1(1).run() +
                             day2.Day2(2).run()
-                            //day3.Day3(3).run()
+                            day3.Day3(3).run()
                             //day4.Day4(4).run() +
                             //day5.Day5(5).run() +
                             //day6.Day6(6).run() +
