@@ -23,7 +23,9 @@ class Day3(day: Int): Solution(day) {
 
 
     private fun count(forest: List<String>, right: Int, down: Int): Int =
-        forest.filterIndexed { i, _ -> i % down == 0 }.mapIndexed { index, s ->
-            s[((index*right.toLong())%s.length).toInt()]
-        }.count { it == '#'}
+        forest.filterIndexed { i, _ -> i % down == 0 }          // in case [down] is not 1
+            .mapIndexed { index, s ->
+                s[((index*right.toLong())%s.length).toInt()]
+            }
+            .count { it == '#'}
 }
