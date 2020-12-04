@@ -1,6 +1,7 @@
 package day1
 
 import Solution
+import utils.MultiThreader
 import utils.PairMaker
 
 class Day1(day: Int): Solution(day) {
@@ -20,14 +21,7 @@ class Day1(day: Int): Solution(day) {
         }
 
     override val second: String
-        get() = "two"
-
-    /*
-    override val first: String
-        get() = PairMaker(entries).firstOrNull{ it.first + it.second == 2020}?.let{ it.first * it.second}.toString()
-    override val second
         get() = two()
-
     private fun two(): String{
         val pairs = PairMaker(entries)
         entries.forEach { third ->
@@ -37,6 +31,4 @@ class Day1(day: Int): Solution(day) {
         }
         return "none found"
     }
-
-     */
 }
