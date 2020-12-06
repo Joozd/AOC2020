@@ -12,6 +12,11 @@ abstract class Solution(day: Int) {
     protected val dayNumber: Int = day
 
     /**
+     * In case groups are separated by two line-breaks:
+     */
+    protected val inputGroups: List<List<String>> by lazy { inputLines.joinToString("~").split("~~").map{it.split("~")} }
+
+    /**
      * Answer for first question as String
      */
     protected abstract val first: String
