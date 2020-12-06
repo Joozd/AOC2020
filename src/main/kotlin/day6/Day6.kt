@@ -13,6 +13,14 @@ class Day6(day: Int): Solution(day) {
             .size
         }.sum().toString()
 
+    override val second = inputGroups.map{group ->
+        group.map{it.toList()}
+            .reduce { acc, list ->
+                acc.filter{it in list}
+            }.size
+    }.sum().toString()
+    /*
+    initial solution was longer:
     override val second: String
         get() = inputGroups.map{ group ->
             group.joinToString()
@@ -23,4 +31,7 @@ class Day6(day: Int): Solution(day) {
                 .keys
                 .size
         }.sum().toString()
+
+     */
+
 }
