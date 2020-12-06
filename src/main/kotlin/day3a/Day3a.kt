@@ -3,8 +3,11 @@ package day3a
 import Solution
 import kotlin.random.Random
 
+
+/**
+ * Which direction misses all trees?
+ */
 class Day3a(day: Int): Solution(day) {
-    // val extraInput = getExtraInputLinesForDay(dayNumber, "a")
 
     override val first: String
         get() = one()
