@@ -13,8 +13,9 @@ abstract class Solution(day: Int) {
 
     /**
      * In case groups are separated by two line-breaks:
+     * Using the lines instead of the original string because the string from txt file might have different line breaks
      */
-    protected val inputGroups: List<List<String>> by lazy { inputLines.joinToString("~").split("~~").map{it.split("~")} }
+    protected val inputGroups: List<List<String>> by lazy { inputLines.joinToString("\n").split("\n\n").map{it.split("~")} }
 
     /**
      * Answer for first question as String
