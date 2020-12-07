@@ -32,7 +32,6 @@ class Day7(day: Int): Solution(day) {
 
     fun twoFunctional(lookingFor: String = "shiny gold", multiplier: Int = 1): Int =
         inputLines.first { it.startsWith(lookingFor) }.dropLast(1).split(" contain ", ", ").drop(1).let { bags ->
-            // <<DROPPED: shiny gold bags-|->>3 light green bags-|-5 striped brown bags-|-3 faded fuchsia bags.
             if (bags.first() == "no other bags") 0
             else bags.map { it.first() - '0' }.sum() * multiplier +
                     bags.map { twoFunctional(it.splitToWords().slice(1..2).joinToString(" "), (it.first() - '0') * multiplier)
