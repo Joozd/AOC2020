@@ -1,6 +1,6 @@
 package day7
 
-import Solution
+import Solution // Contains functions for reading input file and timing how long it takes to get the answers
 
 class Day7(day: Int): Solution(day) {
     private val allBags by lazy { // lazy for timing purposes

@@ -17,7 +17,7 @@
 
 package day0
 
-import Solution
+import Solution // Contains functions for reading input file and timing how long it takes to get the answers
 
 class Day1(day: Int): Solution(day) {
     // val extraInput = getExtraInputLinesForDay(dayNumber, "a")
