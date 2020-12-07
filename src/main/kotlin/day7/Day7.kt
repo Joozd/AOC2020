@@ -37,7 +37,5 @@ class Day7(day: Int): Solution(day) {
             else bags.map { it.first() - '0' }.sum() * multiplier +
                     bags.map { twoFunctional(it.splitToWords().slice(1..2).joinToString(" "), (it.first() - '0') * multiplier)
             }.sum()
-        }.also{
-            println("$lookingFor gave $it bags")
         }
 }
