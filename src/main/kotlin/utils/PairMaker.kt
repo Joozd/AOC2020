@@ -6,6 +6,7 @@ package utils
  * If order matters, just use it.second to it.first for every output.
  */
 class PairMaker<T>(val list: List<T>): Iterable<Pair<T,T>> {
+    constructor(set: Set<T>) : this(set.toList())
     override fun iterator(): Iterator<Pair<T,T>> = object: Iterator<Pair<T,T>>{
         private var firstIndex: Int = 0
         private var secondIndex: Int = 1
