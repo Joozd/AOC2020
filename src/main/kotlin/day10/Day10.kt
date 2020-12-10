@@ -3,7 +3,7 @@ package day10
 import Solution // Contains functions for reading input file and timing how long it takes to get the answers
 
 /**
- * Calculating things is
+ * Calculating things is overrated :)
  */
 class Day10(day: Int): Solution(day) {
     private val list by lazy { inputLines.map {it.toInt()}.sorted() }
