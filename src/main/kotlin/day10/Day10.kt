@@ -7,7 +7,6 @@ import Solution // Contains functions for reading input file and timing how long
  */
 class Day10(day: Int): Solution(day) {
     private val list by lazy { inputLines.map {it.toInt()}.sorted() }
-    //private val list by lazy { inputLines.map {it.toInt()}.sorted() }
     private val refList by lazy { listOf(0) + list }
     private val diffs by lazy {
         list.mapIndexed { i, v ->
