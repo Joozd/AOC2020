@@ -52,3 +52,9 @@ fun Int.sqrt(): Int{
 
 fun Int.abs() = if (this < 0) this*-1 else this
 
+fun Int.pow(n: Int): Int {
+    var acc = 1
+    repeat(n){ acc *= this}
+    return acc
+}
+

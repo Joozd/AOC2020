@@ -20,7 +20,7 @@ class Day9(day: Int): Solution(day) {
     private fun one(): Long {
         val list =ArrayDeque(numbers.take(25))
         var index = 25
-        while (numbers[index] in PairMaker(list.toSet()).map{it.first + it.second}){
+        while (PairMaker(list.toSet()).any {it.first + it.second == numbers[index]}){
             list.removeFirst()
             list.add(numbers[index++])
         }
