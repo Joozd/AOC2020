@@ -1,4 +1,3 @@
-import utils.Timer
 class Main {
     companion object {
         @JvmStatic
@@ -17,7 +16,7 @@ class Main {
                 "9" -> day9.Day9(9).run()
                 "10" -> day10.Day10(10).run()
                 "11" -> day11.Day11(11).run()
-                //"12" -> day12.Day12(12).run()
+                "12" -> day12.Day12(12).run()
                 //"13" -> day13.Day13(13).run()
                 //"14" -> day14.Day14(14).run()
                 //"15" -> day15.Day15(15).run()
@@ -29,6 +28,7 @@ class Main {
                 //"21" -> day21.Day21(21).run()
                 //"22" -> day22.Day22(22).run()
                 //"23" -> day23.Day23(23).run()
+                "98" -> day98.Day98(98).run()
 
 
                 "0" -> {
@@ -42,8 +42,8 @@ class Main {
                             day8.Day8(8).run() +
                             day9.Day9(9).run() +
                             day10.Day10(10).run() +
-                            day11.Day11(11).run()
-                            //day12.Day12(12).run() +
+                            day11.Day11(11).run() +
+                            day12.Day12(12).run()
                             //day13.Day13(13).run() +
                             //day14.Day14(14).run() +
                             //day15.Day15(15).run() +
