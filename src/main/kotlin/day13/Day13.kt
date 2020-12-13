@@ -24,17 +24,12 @@ class Day13(day: Int): Solution(day) {
         var period = 1L //how often this repeats
         var offset = 0L // first occurrence until now where all current buses comply
         busses.sorted().forEach { bus ->
-            println("bus: $bus, index: ${bussesWithOffsets[bus]}")
             while (!offsetIsMatchForThisBus(offset, bus, bussesWithOffsets[bus]!!)){
                 offset += period
             }
             period *= bus
-            println("period: $period, offset: $offset")
         }
-
         return offset
-
-        //return bussesWithOffsets.toString()
     }
 
     private fun offsetIsMatchForThisBus(offset: Long, bus: Int, index: Int): Boolean{
