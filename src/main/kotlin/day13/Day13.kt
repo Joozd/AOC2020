@@ -4,10 +4,8 @@ import Solution // Contains functions for reading input file and timing how long
 import utils.extensions.isDigits
 
 class Day13(day: Int): Solution(day) {
-    //override val inputLines = test3
-
-    val arrivalTime by lazy { inputLines.first().toInt()}
-    val busses by lazy { inputLines.last().split (",")}
+    private val arrivalTime by lazy { inputLines.first().toInt()}
+    private val busses by lazy { inputLines.last().split (",")}
 
     override val first: String
         get() = one().toString()
@@ -41,12 +39,5 @@ class Day13(day: Int): Solution(day) {
 
     private fun offsetIsMatchForThisBus(offset: Long, bus: Int, index: Int): Boolean{
         return (offset + index) % bus == 0L
-    }
-
-    companion object{
-        val test2 = "1000\n17,x,13,19".lines()
-        val test3 = "10000\n1789,37,47,1889".lines()
-        val test = ("939\n" +
-                "7,13,x,x,59,x,31,19").lines()
     }
 }
