@@ -31,12 +31,16 @@ class Day98(day: Int): Solution(day) {
             }
             route
         }
-        return foundPath.toString().also{
-            println((1..28).filter{keys[it] != null}.any {
-                it in foundPath.flatten()})
-        }
+        return makeString(foundPath.first())
+        //return foundPath.first().groupingBy { it }.eachCount().toList().sortedByDescending { it.second }
+        //    .joinToString("\n") { "${it.first}\t: ${it.second}" }
     }
 
+    private fun makeString(input: List<Int>): String{
+        val knownLetters = listOf(20 to " ",
+        11 to "e").toMap()
+        return input.map{(knownLetters[it] ?: it.toString()).padStart(2, ' ') }.joinToString(" ")
+    }
     /**
      * @param currentPos: Position of current key
      * @param direction: Direction of next key

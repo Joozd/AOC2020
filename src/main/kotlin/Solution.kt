@@ -5,7 +5,7 @@ import java.time.Duration
 
 abstract class Solution(day: Int) {
     // protected val inputString = getInputForDay(day)
-    protected val inputLines = getInputLinesForDay(day)
+    protected open val inputLines = getInputLinesForDay(day)
     /**
      * Number of this day
      */
