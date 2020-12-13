@@ -23,7 +23,7 @@ class Day13(day: Int): Solution(day) {
         val busses = bussesWithOffsets.keys
         var period = 1L //how often this repeats
         var offset = 0L // first occurrence until now where all current buses comply
-        busses.sorted().forEach { bus ->
+        busses.forEach { bus ->
             while (!offsetIsMatchForThisBus(offset, bus, bussesWithOffsets[bus]!!)){
                 offset += period
             }
