@@ -18,7 +18,7 @@ class Main {
                 "11" -> day11.Day11(11).run()
                 "12" -> day12.Day12(12).run()
                 "13" -> day13.Day13(13).run()
-                //"14" -> day14.Day14(14).run()
+                "14" -> day14.Day14(14).run()
                 //"15" -> day15.Day15(15).run()
                 //"16" -> day16.Day16(16).run()
                 //"17" -> day17.Day17(17).run()
