@@ -34,7 +34,7 @@ class Day12(day: Int): Solution(day) {
                 y += waypoint.y * it.drop(1).toInt()
             }
         }
-        println("x: $x, y: $y")
+        //println("x: $x, y: $y")
         return x.abs() + y.abs()
     }
 }

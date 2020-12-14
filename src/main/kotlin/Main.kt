@@ -19,7 +19,7 @@ class Main {
                 "12" -> day12.Day12(12).run()
                 "13" -> day13.Day13(13).run()
                 "14" -> day14.Day14(14).run()
-                //"15" -> day15.Day15(15).run()
+                "15" -> day15.Day15(15).run()
                 //"16" -> day16.Day16(16).run()
                 //"17" -> day17.Day17(17).run()
                 //"18" -> day18.Day18(18).run()
@@ -43,9 +43,9 @@ class Main {
                             day9.Day9(9).run() +
                             day10.Day10(10).run() +
                             day11.Day11(11).run() +
-                            day12.Day12(12).run()
-                            //day13.Day13(13).run() +
-                            //day14.Day14(14).run() +
+                            day12.Day12(12).run() +
+                            day13.Day13(13).run() +
+                            day14.Day14(14).run()
                             //day15.Day15(15).run() +
                             //day16.Day16(16).run() +
                             //day17.Day17(17).run() +

@@ -21,7 +21,6 @@ class Day10(day: Int): Solution(day) {
 
 
     private fun two(): String {
-        println(diffs)
         val subLists = diffs.joinToString("") { it.toString() }.split('3').map{
             when(it.length){
                 0 -> ZERO
