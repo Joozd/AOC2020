@@ -18,7 +18,6 @@ class Day15(day: Int): Solution(day) {
         var next = 0
         while (counter < target){
             val nextNext = counter - (database[next] ?: counter)
-            //println("$counter: $next ($nextNext steps repeat)")
             database[next] = counter++
             next = nextNext
         }
