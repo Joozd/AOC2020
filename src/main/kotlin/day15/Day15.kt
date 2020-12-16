@@ -13,7 +13,7 @@ class Day15(day: Int): Solution(day) {
         get() = calculate(30000000).toString()
 
     private fun calculate(target: Int): Int {
-        val database = initialCalls.toMutableMap()
+        val database = HashMap(initialCalls)
         var counter = initialCalls.values.maxOrNull()!! + 1
         var next = 0
         while (counter < target){
