@@ -4,6 +4,9 @@ import Solution // Contains functions for reading input file and timing how long
 import utils.extensions.multiIntersect
 import utils.extensions.splitToWords
 
+/**
+ * Least amount of lines for extra unreadibility!
+ */
 class Day16(day: Int): Solution(day) {
     //rules is a list of all rules per line
     private val rules by lazy { inputGroups.first().map { it.splitToWords().takeLast(3).mapNotNull { w -> w.takeIf { '-' in it }?.split('-')?.let { r -> r.first().toInt()..r.last().toInt() }}}}
@@ -27,11 +30,7 @@ class Day16(day: Int): Solution(day) {
         val rules = HashMap<Int, Int>() // rule number (line number) to ticket position
 
         // i know this is ugly but it works. Leave me alone.
-        while (rules.keys.size != possibilities.size){
-            val next = possibilities.first { it.second.filter{it !in rules.keys}.size == 1 }
-            rules[next.second.first{it !in rules.keys}] = next.first
-        }
-        val myTicket = inputGroups[1].drop(1).first().split(',').map{it.toInt()}
-        return (0 until 6).fold(1L) { acc, i -> acc * myTicket[rules[i]!!] }
+        while (rules.keys.size != possibilities.size){ possibilities.first { it.second.filter{it !in rules.keys}.size == 1 }.let { next -> rules[next.second.first{it !in rules.keys}] = next.first } }
+        inputGroups[1].drop(1).first().split(',').map{it.toInt()}.let { myTicket -> return (0 until 6).fold(1L) { acc, i -> acc * myTicket[rules[i]!!] } }
     }
 }
