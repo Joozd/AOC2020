@@ -1,10 +1,9 @@
 package utils.gameOfLife
 
-import day11.Position
-
 abstract class GameOfLifeNode<T>(val x: Int, val y : Int) {
-    protected abstract var state: T
+    abstract var state: T
     protected var nextState: T = state
+
     protected var neighbours: List<GameOfLifeNode<T>> = emptyList()
 
     val changing: Boolean
@@ -27,10 +26,10 @@ abstract class GameOfLifeNode<T>(val x: Int, val y : Int) {
      * This is what happens every tick
      * @return the value [state] should have on the next tick or null if no change
      */
-    abstract fun onTick(): T?
+    abstract fun assignNextState(): T?
 
     fun tick(){
-        onTick()?.let { nextState = it }
+        assignNextState()?.let { nextState = it }
     }
 
 

@@ -15,7 +15,7 @@ class Node(x: Int, y: Int, val hasChair: Boolean): GameOfLifeNode<Boolean>(x,y) 
     /**
      * Run this only on subset with chairs aub
      */
-    override fun onTick() = when (countNeighbours { it }) {
+    override fun assignNextState() = when (countNeighbours { it }) {
         0 -> true
         4 -> nullIfQuestion2
         in (5..100) -> false
