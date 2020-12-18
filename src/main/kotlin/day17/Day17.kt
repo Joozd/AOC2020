@@ -1,6 +1,7 @@
 package day17
 
 import Solution // Contains functions for reading input file and timing how long it takes to get the answers
+import utils.MultiThreader
 
 class Day17(day: Int): Solution(day) {
     //override val inputLines = test1
@@ -42,8 +43,8 @@ class Day17(day: Int): Solution(day) {
             }
         }
         println("Universe populated!")
-        universe.forEach {
-            it.assignNeighbours(universe)
+        MultiThreader(assignMultiThread(universe)).forEach { _ ->
+
         }
         println("Universe populated!")
         repeat(6){ repeat ->
@@ -67,7 +68,7 @@ class Day17(day: Int): Solution(day) {
             }.flatten()
         }.flatten()
 
-    private fun generateUniverse(xx: Int, yy: Int, zz: Int, ww: Int): Collection<HyperNode> =
+    private fun generateUniverse(xx: Int, yy: Int, zz: Int, ww: Int): List<HyperNode> =
         (0..xx).map{ x ->
             (0..yy).map{ y ->
                 (0..zz).map { z ->
@@ -79,6 +80,18 @@ class Day17(day: Int): Solution(day) {
         }.flatten()
 
 
+    fun assignMultiThread(universe: List<HyperNode>) = object: Iterable<Unit>{
+        private val universe = universe
+        override fun iterator() = object: Iterator<Unit>{
+            private val u = universe
+            private var counter = 0
+            override fun hasNext() = counter < u.size
+
+            override fun next() {
+                u[counter++].assignNeighbours(universe)
+            }
+        }
+    }
 
     companion object{
         const val OFFSET = 6
