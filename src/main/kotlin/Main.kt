@@ -1,3 +1,5 @@
+import kotlin.time.milliseconds
+
 class Main {
     companion object {
         @JvmStatic
@@ -28,8 +30,9 @@ class Main {
                 "21" -> day21.Day21(21).run()
                 //"22" -> day22.Day22(22).run()
                 //"23" -> day23.Day23(23).run()
+                //"24" -> day24.Day24(24).run()
+                //"25" -> day25.Day25(25).run()
                 "98" -> day98.Day98(98).run()
-
 
                 "0" -> {
                     val totalTime = day1.Day1(1).run() +

@@ -1,5 +1,4 @@
 import utils.Timer
-import utils.getInputForDay
 import utils.getInputLinesForDay
 import java.time.Duration
 
@@ -40,5 +39,12 @@ abstract class Solution(day: Int) {
         println("Elapsed time for 2: ${(elapsedTime - firstTime).toMillis()} millis")
         println("Total time: ${elapsedTime.toMillis()} millis.\n****************************************\n")
         return elapsedTime
+    }
+
+    fun runSilent(): Duration {
+        timer.start()
+        first
+        second
+        return timer.getElapsedTime()
     }
 }

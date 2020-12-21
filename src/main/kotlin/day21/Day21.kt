@@ -41,5 +41,5 @@ class Day21(day: Int): Solution(day) {
     }
 
     // I have learned my lesson to never ever use a Pair again if not for construction a Map
-    private data class Product(val ingredients: List<String>, val allergens: List<String>)
+    private class Product(val ingredients: List<String>, val allergens: List<String>)
 }
