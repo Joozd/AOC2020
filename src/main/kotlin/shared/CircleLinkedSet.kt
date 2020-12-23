@@ -27,7 +27,7 @@ class CircleLinkedSet<T>(): MutableCollection<T> {
     /**
      * Return a link of [items], last link ends with next = null
      */
-    private fun _link(items: List<T>): CircleLinkedSetItem<T>?{
+    private fun linkItems(items: List<T>): CircleLinkedSetItem<T>?{
         if (items.isEmpty()) return null
         val first = CircleLinkedSetItem(items.first())
         var current = first
@@ -84,7 +84,7 @@ class CircleLinkedSet<T>(): MutableCollection<T> {
     fun insertAfter(target: T, itemsToInsert:List<T>){
         val before = currentItems[target] ?: throw(NoSuchElementException("Item $target not found in $this"))
         val after = before.next!!
-        _link(itemsToInsert)?.let{  first ->
+        linkItems(itemsToInsert)?.let{ first ->
             var current = first
             currentItems[current.value] = current
             before.next = first.also{
@@ -185,34 +185,10 @@ class CircleLinkedSet<T>(): MutableCollection<T> {
     }
 
     override fun contains(element: T): Boolean =
-        top?.let{ t ->
-            if (t.value == element) true
-            else {
-                var current = t.next!!
-                while (current != top){
-                    if (current.value == element) return true
-                    current = current.next!!
-                }
-                false
-            }
-        } ?: false
-
-
-
-
+        element in currentItems.keys
 
     override fun containsAll(elements: Collection<T>): Boolean =
-        top?.let{ t ->
-            val ee = elements.toMutableList()
-            if (t.value in elements) ee.remove(t.value)
-            var current = t.next!!
-            while (current != top) {
-                if (current.value in elements) ee.remove(t.value)
-                current = current.next!!
-                if (ee.isEmpty()) return true
-            }
-            ee.isEmpty()
-        } ?: false
+        elements.all{ it in currentItems.keys }
 
     override fun iterator(): MutableIterator<T> = object: MutableIterator<T>{
         var done = false
